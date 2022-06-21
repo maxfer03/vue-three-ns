@@ -1,4 +1,8 @@
-# insight-vue-cli
+# Vue + three for Nicasource Insights
+
+Readme still in progress
+
+A portfolio made with Vue + three. (three not implemented yet)
 
 ## Project setup
 ```
