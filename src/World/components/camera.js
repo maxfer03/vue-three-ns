@@ -9,7 +9,7 @@ function createCamera() {
   );
 
   // move the camera back so we can view the scene
-  camera.position.set(0, 15, 30);
+  camera.position.set(0, 10, 30);
   camera.tick = (delta) => {
     
   };

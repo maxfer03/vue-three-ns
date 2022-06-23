@@ -4,7 +4,7 @@ import { createScene } from "./components/scene.js";
 import { createRenderer } from "./systems/renderer.js";
 import { Loop } from "./systems/Loop.js";
 import { Resizer } from "./systems/Resizer.js";
-
+import { createControls } from "./systems/controls.js";
 
 import createTerrain from "./components/objects/terrain.js";
 
@@ -31,26 +31,29 @@ class World {
 
     container.append(renderer.domElement);
 
+    // Orbit Controls
+    const controls = createControls(camera, renderer.domElement);
+
     // Light Instance, with optional light helper
     const { light, lightHelper } = createLights(color);
 
-    // random values for terrain vertexes
+    // Random values for terrain vertices
+    // We could do this on the terrain.js file,
+    // but if we want to have a single random
+    // number array for more than one terrain
+    // instance, then we would be in trouble.
     const randomVals = [];
-
     for (let i = 0; i < 12675; i++) {
       randomVals.push(Math.random() - 0.5);
     }
 
-    // terrain Instance
+    // Terrain Instance
     let terrain = createTerrain({
       color: color,
       randVertexArr: randomVals,
-      yOffset: 0,
-      wire: false,
-      flatShading: true,
-      transparent: false,
     });
 
+    loop.updatables.push(controls);
     loop.updatables.push(light);
     loop.updatables.push(terrain);
 

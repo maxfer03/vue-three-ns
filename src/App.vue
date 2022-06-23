@@ -8,12 +8,11 @@
 
 <style lang="scss">
 #app {
-  
-
+  position: relative;
   padding: 0px auto;
-
   padding: 0px 2vw;
-
+  z-index: 2;
+  pointer-events: none;
   @include desktop {
     padding: 0px 10vw;
   }
@@ -22,7 +21,7 @@
 #nav {
   padding: 30px;
   text-align: center;
-
+  @include child-events-on();
   a {
     font-weight: bold;
     color: $text-color;

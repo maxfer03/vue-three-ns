@@ -7,3 +7,14 @@
     }
     
 }
+
+@mixin child-events-on($debug: false) {
+    & > * {
+        @if $debug {
+            background: red;
+        }
+        pointer-events: all;
+    }
+
+    @content;
+}
