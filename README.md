@@ -1,8 +1,8 @@
 # Vue + three for Nicasource Insights
 
-Readme still in progress
+An example portfolio made with Vue + Three.js for Nicasource's NS Insights Initiative. 
 
-A portfolio made with Vue + three. (three not implemented yet)
+Check out my [Medium articles](https://medium.com/nicasource/building-an-interactive-web-portfolio-with-vue-three-js-part-one-introduction-and-setup-405426cec84) for an in-depth explanation!
 
 ## Project setup
 ```
